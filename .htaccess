@@ -1,3 +1,39 @@
+# BEGIN SecuPress readme_discloses
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /tipikall/
+    RewriteRule ^(([_0-9a-zA-Z-]+/)?)(.*/)?(readme|changelog|debug)\.(txt|md|html|log)$ - [R=404,L,NC]
+</IfModule>
+# END SecuPress
+
+# BEGIN SecuPress wp_version
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /tipikall/
+    RewriteRule ^(([_0-9a-zA-Z-]+/)?)readme\.html$ - [R=404,L,NC]
+</IfModule>
+# END SecuPress
+
+# BEGIN SecuPress no_x_powered_by
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+</IfModule>
+# END SecuPress
+
+# BEGIN SecuPress php_disclosure
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{QUERY_STRING} \=PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC]
+    RewriteRule .* - [F]
+</IfModule>
+# END SecuPress
+
+# BEGIN SecuPress directory_listing
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+# END SecuPress
+
 RewriteEngine On
 RewriteBase /tipikall/
 RewriteRule ^index\.php$ - [L]
