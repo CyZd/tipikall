@@ -28,3 +28,264 @@ Use it to make something cool, have fun, and share what you've learned with othe
 9.0
 10.0
 --------------------------------------------------------------*/
+
+/** THEME COLOR PALETTE **/
+/**
+Purple camaieu:
+#5D4E60
+#826C7F
+#A88FAC
+#D4B2D8
+#EFCEFA
+Red:
+#CF2027
+ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #FFF url("assets/images/logo-tipikall-grey.svg") no-repeat;
+    background-size: 100%;
+}
+
+/** HEADER **/
+
+#top-menu-icon {
+    background-color: #CF2027;
+}
+
+@media only screen and (min-width: 960px) {
+    #top-nav-bar {
+        width: 100%;
+        background: url("assets/images/bg-header.svg") no-repeat;
+        background-size: 100% 100%;
+        top: 0;
+        z-index: 500;
+    }
+    #top-menu-right {
+        height: 80px;
+    }
+    #top-menu  li a {
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    #top-nav-bar {
+        width: 100%;
+        background: url("assets/images/bg-header.svg") no-repeat;
+        background-size: 100% 100%;
+        top: 0;
+        z-index: 500;
+    }
+}
+
+.btn-floating {
+    background-color: #CF2027 !important;
+    border-radius: 0px !important;
+}
+
+.btn-floating.btn-large {
+    margin-top: 20px;
+}
+
+.fixed-action-btn toolbar direction-top {
+    z-index: 501;
+}
+
+.fixed-action-btn {
+    right: 20px;
+    top: 0px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 501 !important;
+}
+
+.fixed-action-btn.toolbar {
+    height: 100% !important;
+}
+
+.fixed-action-btn.toolbar ul {
+    display: grid !important;
+}
+
+.fixed-action-btn.toolbar ul a {
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+#slogan {
+    text-align: center;
+}
+
+#slogan h1 {
+    color: white;
+    font-weight: bold;
+}
+
+.waves-effect.waves-light.btn-large {
+    font-family: Quantify, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+#cta-top-menu a {
+    background-color: #CF2027 !important;
+    float: right;
+    margin: 10px;
+}
+
+#cta-top-menu {
+    /*padding: 20px;*/
+    z-index: 600;
+}
+
+/** FOOTER **/
+
+#bloc-footer {
+    width: 100%;
+    /*height: 120px;*/
+    background: url("assets/images/bg-footer.svg") no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    color: white;
+    bottom: 0px;
+}
+
+#bloc-footer .row {
+    margin-bottom: 0px !important;
+}
+
+.widget-area {
+    display: inline-flex;
+}
+
+.widget-column {
+    margin: 15px;
+}
+
+#footer-socials ul {
+    text-align: center;
+    margin-top: 0px;
+}
+
+#footer-socials li {
+    display: inline;
+}
+
+#footer-socials i {
+    color: white;
+    font-size: 24px;
+}
+
+#infos-1-footer {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.site-info a {
+    color: white;
+}
+
+.site-info {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#site-info-left h2 {
+    font-size: 2rem;
+}
+
+#infos-2-footer {
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+#infos-3-footer {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    position: relative;
+    top: 40px;
+}
+
+#footer-menu {
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#cta-footer {
+    text-align: right;
+    z-index: 599;
+    margin-top: 10px;
+}
+
+#cta-footer a {
+    background-color: #CF2027 !important;
+}
+
+#site-info-right div {
+    float: right;
+    margin-right: 10px;
+}
+
+.menu-menu-footer-container li {
+    display: inline;
+}
+
+.menu-menu-footer-container li a {
+    color: white;
+    margin-left: 10px;
+}
+
+/** Widget footer **/
+.textwidget p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.widget-title {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-family: Quantify, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+.widget-column {
+    margin: 0px;
+}
+
+/** LOGO **/
+
+#logo-box{
+    margin-top: 20px;
+    z-index:100;
+    min-width: 270px;
+}
+
+#logo-header {
+    text-align: center;
+}
+#logo-header img {
+    height: 90px;
+}
+
+#logo-footer {
+    text-align: center;
+}
+#logo-footer img {
+    height: 60px;
+    margin-top: 10px;
+}
+
+/** LOGO SVG **/
+
+@font-face {
+    font-family: CaviarDreams;
+    src: url(assets/fonts/CaviarDreams.ttf)
+}
+
+@font-face {
+    font-family: Quantify;
+    src: url(assets/fonts/Quantify.ttf)
+}
