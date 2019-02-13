@@ -48,6 +48,39 @@ add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
 
 /**
+ * Loading custom JS files on specific pages
+ */
+function load_tipikall_js_assets() {
+    if ( is_front_page() ) {
+        wp_enqueue_script( 'front-custom', get_template_directory_uri() . '/assets/js/front-page-custom.js', [], '1.0.0', true );
+    } elseif ( is_home() && ! is_front_page()) {
+        //$page_for_posts = get_option( 'page_for_posts' );
+        wp_enqueue_script( 'blog-custom', get_template_directory_uri() . '/assets/js/blog-custom.js', [], '1.0.0', true );
+    } else {
+        wp_enqueue_script( 'page-custom', get_template_directory_uri() . '/assets/js/page-custom.js', [], '1.0.0', true );
+    }
+}
+add_action('wp_enqueue_scripts', 'load_tipikall_js_assets');
+
+/**
+ * Loading custom Style files on specific pages
+ */
+function load_tipikall_style_assets() {
+    if ( is_front_page() ) {
+        wp_register_style('front-cutom-style', get_template_directory_uri() . '/assets/css/front-custom.css', [], '1.0.0', 'all');
+        wp_enqueue_style('front-cutom-style');
+    } elseif ( is_home() && ! is_front_page()) {
+        wp_register_style('blog-cutom-style', get_template_directory_uri() . '/assets/css/blog-custom.css', [], '1.0.0', 'all');
+        wp_enqueue_style('blog-cutom-style');
+    } else {
+        wp_register_style('page-cutom-style', get_template_directory_uri() . '/assets/css/page-custom.css', [], '1.0.0', 'all');
+        wp_enqueue_style('page-cutom-style');
+    }
+}
+add_action('wp_enqueue_scripts', 'load_tipikall_style_assets');
+
+
+/**
  * Getting images root folder URL for html src
  * @return string
  */
@@ -121,3 +154,31 @@ function tipikall_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'tipikall_widgets_init' );
+
+/**
+ * Get unique ID.
+ *
+ * This is a PHP implementation of Underscore's uniqueId method. A static variable
+ * contains an integer that is incremented with each call. This number is returned
+ * with the optional prefix. As such the returned value is not universally unique,
+ * but it is unique across the life of the PHP process.
+ *
+ * @see wp_unique_id() Themes requiring WordPress 5.0.3 and greater should use this instead.
+ *
+ * @staticvar int $id_counter
+ *
+ * @param string $prefix Prefix for the returned ID.
+ * @return string Unique ID.
+ */
+function tipikall_unique_id( $prefix = '' ) {
+    static $id_counter = 0;
+    if ( function_exists( 'wp_unique_id' ) ) {
+        return wp_unique_id( $prefix );
+    }
+    return $prefix . (string) ++$id_counter;
+}
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_parent_theme_file_path( '/inc/template-tags.php' );
