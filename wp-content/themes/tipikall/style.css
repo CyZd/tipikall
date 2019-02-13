@@ -46,7 +46,7 @@ html {
 }
 
 body {
-    background: #FFF url("assets/images/logo-tipikall-grey.svg") no-repeat;
+    background: #FFF url("assets/images/logo-tipikall-grey.svg") no-repeat center;
     background-size: 100%;
 }
 
