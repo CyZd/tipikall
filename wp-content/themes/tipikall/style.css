@@ -289,3 +289,76 @@ body {
     font-family: Quantify;
     src: url(assets/fonts/Quantify.ttf)
 }
+
+/** RIGHT NAV RELATIVE TO FULLPAGE.JS **/
+
+#fp-nav {
+    z-index: 999 !important;
+}
+
+#fp-nav ul li a span {
+    background: #CF2027 !important;
+}
+
+#side-nav-scroll {
+    white-space: nowrap;
+    float: right;
+    position: fixed;
+    right: 23px;
+    top: 50%;
+    z-index: 999;
+}
+#side-nav-scroll ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* Only stick if you can fit */
+@media (min-height: 300px) {
+    #side-nav-scroll ul {
+        position: sticky;
+        top: 0;
+    }
+}
+#side-nav-scroll ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+#side-nav-scroll a i {
+    color: #ec0b43;
+    font-size: 40px;
+}
+
+/** PAGE **/
+
+#front-page, #single-page, #blog-page {
+    position: absolute !important;
+    top: 0px;
+    z-index: -100;
+}
+
+/** SECTIONS RELATIVE TO FULLPAGE.JS **/
+
+.section {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.section {
+    text-align:center;
+    font-size: 1em;
+    opacity: 0.85;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+#section-1, #section-2, #section-3 {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#section-header {
+    padding-top: 0px !important;
+}

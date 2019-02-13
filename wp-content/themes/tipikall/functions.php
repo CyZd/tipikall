@@ -56,6 +56,23 @@ function getTemplateImgRoot() {
 }
 
 /**
+ * Retrieving articles with specific category ID
+ * @param $id
+ * @return WP_Query
+ */
+function getArticlesById($id) {
+    $args = array(
+        'post_type' => 'post' ,
+        'orderby' => 'date' ,
+        'order' => 'ASC' ,
+        'cat' => $id,
+        'paged' => get_query_var('paged'),
+    );
+    $q = new WP_Query($args);
+    return $q;
+}
+
+/**
  * Register nav menus
  *
  * @links https://codex.wordpress.org/Function_Reference/register_nav_menus

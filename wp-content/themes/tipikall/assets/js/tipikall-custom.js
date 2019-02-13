@@ -14,3 +14,29 @@ document.addEventListener('DOMContentLoaded', function() {
         toolbarEnabled: true
     });
 });
+
+new fullpage('#front-page', {
+    anchors: ['page1', 'page2', 'page3', 'page4'],
+    sectionsColor: ['#826C7F', '#A88FAC', '#D4B2D8', '#EFCEFA', '#FFF689'],
+    navigation: true,
+    // scrollOverflow: true,
+    // scrollBar: true,
+    // navigationPosition: 'right',
+    // navigationTooltips: ['First page', 'Second page', 'Third and last page'],
+});
+
+/** JQuery **/
+
+/**
+ * Setting padding to avoid section content getting hide from header and footer
+ *
+ * @type {(function())|jQuery}
+ */
+var j = jQuery.noConflict();
+
+j(document).ready(function(){
+    var paddingTop = j('#top-nav-bar').height()+20;
+    var paddingBottom = j('#bloc-footer').height()+20;
+    j('.fp-tableCell').css({'padding-top':paddingTop,'padding-bottom':paddingBottom});
+    // j('.fp-tableCell').css({'padding-top':'200px','padding-bottom':'200px'});
+});
